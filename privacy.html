@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pocca 隐私政策</title>
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap">
+<style>
+  /* 单栏文档，左侧一条细钴蓝轴线串起各节；配色取自 App 自己的设计令牌 */
+  :root {
+    --ground: #F2F3F6;
+    --surface: #FFFFFF;
+    --ink: #14151B;
+    --ink2: #5B606C;
+    --line: rgba(20, 21, 27, 0.11);
+    --cobalt: #2335EE;
+    --sticker: #F2E04A;
+    --on-sticker: #14151B;
+
+    --display: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+            "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #141724;
+      --surface: #1C2032;
+      --ink: #EEF0F7;
+      --ink2: #9CA3B9;
+      --line: rgba(238, 240, 247, 0.14);
+      --cobalt: #8290FF;
+      --sticker: #E9D84A;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #141724;
+    --surface: #1C2032;
+    --ink: #EEF0F7;
+    --ink2: #9CA3B9;
+    --line: rgba(238, 240, 247, 0.14);
+    --cobalt: #8290FF;
+    --sticker: #E9D84A;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding-block: clamp(2.5rem, 7vw, 4.5rem) 4rem;
+    padding-inline: 20px;
+  }
+
+  /* 头部 */
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .mark svg { flex: none; }
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 1.6rem 0 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--ink2);
+  }
+  .stamp {
+    background: var(--sticker);
+    color: var(--on-sticker);
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 一句话结论 */
+  .lede {
+    margin-top: 2rem;
+    padding: 1.1rem 1.3rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--cobalt);
+    border-radius: 14px;
+    font-size: 1.02rem;
+  }
+  .lede strong { color: var(--cobalt); }
+
+  /* 正文：左侧轴线 */
+  .sections {
+    margin-top: 2.4rem;
+    border-left: 1px solid var(--line);
+    padding-left: clamp(1.1rem, 4vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+  }
+  section { position: relative; min-width: 0; }
+  section::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * clamp(1.1rem, 4vw, 1.9rem) - 4px);
+    top: 0.72em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--cobalt);
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.5rem;
+  }
+  p { margin: 0 0 0.7rem; }
+  p:last-child { margin-bottom: 0; }
+  ul {
+    margin: 0.3rem 0 0.7rem;
+    padding-left: 1.15rem;
+  }
+  li { margin-bottom: 0.35rem; }
+  li::marker { color: var(--ink2); }
+
+  .quiet { color: var(--ink2); }
+
+  /* 邮箱写成可选中的文字而不是链接：在不同浏览器里点 mailto 不一定有反应 */
+  .mailbox {
+    font-family: var(--display);
+    font-weight: 500;
+    color: var(--cobalt);
+    background: color-mix(in srgb, var(--cobalt) 10%, transparent);
+    padding: 2px 8px;
+    border-radius: 6px;
+    user-select: all;
+    white-space: nowrap;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink2);
+  }
+  .logo { flex: none; display: block; border-radius: 22.5%; }
+</style>
+
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="mark">
+      <img class="logo" src="logo.png" width="34" height="34" alt="" aria-hidden="true">
+      <span class="wordmark">Pocca</span>
+    </div>
+
+    <h1>隐私政策</h1>
+
+    <div class="meta">
+      <span class="stamp">更新于 2026 年 10 月 22 日</span>
+      <span>适用于 iOS 应用「Pocca」</span>
+    </div>
+  </header>
+
+  <p class="lede">
+    一句话说清：<strong>开发者不收集你的任何数据。</strong>
+    你在 Pocca 里记录的内容，只存在你自己的手机和你自己的 iCloud 里。
+  </p>
+
+  <div class="sections">
+    <section>
+      <h2>我们不收集任何数据</h2>
+      <p>
+        Pocca 没有账号系统，不需要注册或登录，也不连接开发者的服务器。
+        你记录的人物、小卡、卡册、价格和照片，开发者都看不到、拿不到。
+        不收集手机号、邮箱、设备标识符、位置或通讯录。
+      </p>
+    </section>
+
+    <section>
+      <h2>数据存在哪里</h2>
+      <p>
+        所有数据存在你的手机上。如果你打开了「iCloud 同步」，数据还会存进你自己的
+        iCloud 账号（Apple 的 CloudKit 私有数据库），只有你本人能访问，开发者无法读取。
+      </p>
+      <ul>
+        <li>可以在 App 内「账本 → 设置 → iCloud 同步」随时关闭同步。</li>
+        <li>可以在「设置 → 删除 iCloud 中的数据」删除云端的全部记录，本机数据不受影响。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>关于权限</h2>
+      <p>Pocca 只在你用到对应功能时请求权限：</p>
+      <ul>
+        <li><strong>相机</strong>：「拍一张」「拍整页」时使用。拍下的照片只用来裁出卡面，保存在你的手机和你自己的 iCloud 里。</li>
+        <li><strong>麦克风和语音识别</strong>：「说一句」时使用。识别在手机上完成（本机识别），录音不会保存，也不会上传。</li>
+        <li><strong>照片</strong>：从相册选图时使用系统的照片选择器，Pocca 只能看到你选中的那几张图，看不到相册里其他内容。</li>
+      </ul>
+      <p>
+        权限都可以拒绝，拒绝后只是对应功能用不了，不影响其他使用。
+        你也可以随时在系统「设置 → 隐私与安全性」里收回。
+      </p>
+    </section>
+
+    <section>
+      <h2>文字识别</h2>
+      <p>
+        读取截图和卡背上的文字，使用的是 Apple 系统自带的文字识别，在手机上完成，不会上传。
+      </p>
+    </section>
+
+    <section>
+      <h2>导出和备份</h2>
+      <p>
+        「导出」生成的备份文件（表格 + 照片压缩包）由你自己保存到「文件」或其他位置，
+        Pocca 不会把它发送到任何地方。
+      </p>
+    </section>
+
+    <section>
+      <h2>第三方</h2>
+      <p>
+        Pocca 没有广告，不使用任何数据分析或追踪工具，不和任何第三方分享数据。
+      </p>
+    </section>
+
+    <section>
+      <h2>数据怎么删</h2>
+      <ul>
+        <li>「设置 → 清除所有数据」一次删除全部人物、卡片和卡册。</li>
+        <li>「设置 → 删除 iCloud 中的数据」删除云端的记录。</li>
+        <li>把 App 从手机上删除，本机数据会随之删掉；iCloud 里的数据需要另外删除。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>关于未成年人</h2>
+      <p>
+        Pocca 不收集任何人的个人信息，包括未成年人。
+      </p>
+    </section>
+
+    <section>
+      <h2>本政策的更新</h2>
+      <p>
+        如果以后有变化，会更新本页内容和顶部的日期。
+      </p>
+    </section>
+
+    <section>
+      <h2>联系我们</h2>
+      <p>
+        对隐私有任何疑问，欢迎来信：
+        <span class="mailbox" id="contact">2672309116@qq.com</span>
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    App 内「账本 → 设置 → 隐私政策」也能随时查看。
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pocca 技术支持</title>
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap">
+<style>
+  /* 和隐私政策页同一套令牌，左侧轴线串起各节 */
+  :root {
+    --ground: #F2F3F6;
+    --surface: #FFFFFF;
+    --ink: #14151B;
+    --ink2: #5B606C;
+    --line: rgba(20, 21, 27, 0.11);
+    --cobalt: #2335EE;
+    --sticker: #F2E04A;
+    --on-sticker: #14151B;
+
+    --display: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+            "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #141724;
+      --surface: #1C2032;
+      --ink: #EEF0F7;
+      --ink2: #9CA3B9;
+      --line: rgba(238, 240, 247, 0.14);
+      --cobalt: #8290FF;
+      --sticker: #E9D84A;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #141724;
+    --surface: #1C2032;
+    --ink: #EEF0F7;
+    --ink2: #9CA3B9;
+    --line: rgba(238, 240, 247, 0.14);
+    --cobalt: #8290FF;
+    --sticker: #E9D84A;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding-block: clamp(2.5rem, 7vw, 4.5rem) 4rem;
+    padding-inline: 20px;
+  }
+
+  .mark { display: flex; align-items: center; gap: 12px; }
+  .mark svg { flex: none; }
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 1.6rem 0 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--ink2);
+  }
+
+  /* 最上面先给联系方式，别让人翻半天 */
+  .contact-card {
+    margin-top: 2rem;
+    padding: 1.2rem 1.3rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--cobalt);
+    border-radius: 14px;
+  }
+  .contact-card p { margin: 0 0 0.5rem; }
+  .contact-card p:last-child { margin: 0; }
+  .mailbox {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--cobalt);
+    background: color-mix(in srgb, var(--cobalt) 10%, transparent);
+    padding: 3px 10px;
+    border-radius: 6px;
+    user-select: all;
+    white-space: nowrap;
+  }
+  .hint { font-size: 0.85rem; color: var(--ink2); }
+
+  .sections {
+    margin-top: 2.4rem;
+    border-left: 1px solid var(--line);
+    padding-left: clamp(1.1rem, 4vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+  }
+  section { position: relative; min-width: 0; }
+  section::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * clamp(1.1rem, 4vw, 1.9rem) - 4px);
+    top: 0.72em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--cobalt);
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.5rem;
+  }
+  p { margin: 0 0 0.7rem; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0.3rem 0 0.7rem; padding-left: 1.15rem; }
+  li { margin-bottom: 0.35rem; }
+  li::marker { color: var(--ink2); }
+  strong { font-weight: 600; }
+
+  .warn {
+    display: inline-block;
+    background: var(--sticker);
+    color: var(--on-sticker);
+    padding: 1px 7px;
+    border-radius: 5px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.82rem;
+    color: var(--ink2);
+  }
+  footer a { color: var(--cobalt); }
+  .logo { flex: none; display: block; border-radius: 22.5%; }
+</style>
+
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="mark">
+      <img class="logo" src="logo.png" width="34" height="34" alt="" aria-hidden="true">
+      <span class="wordmark">Pocca</span>
+    </div>
+
+    <h1>技术支持</h1>
+
+    <div class="meta">
+      <span>K-pop 小卡收藏图鉴 · iOS</span>
+    </div>
+  </header>
+
+  <div class="contact-card">
+    <p>遇到问题、有建议，或者想要某个功能，直接来信：</p>
+    <p><span class="mailbox" id="contact">2672309116@qq.com</span></p>
+    <p class="hint">一般两个工作日内回复。来信时说清你用的是哪一代 iPhone、系统版本，
+      以及问题出现前你做了什么，这样我能更快定位。</p>
+  </div>
+
+  <div class="sections">
+    <section>
+      <h2>Pocca 是做什么的</h2>
+      <p>
+        一个给 K-pop 小卡收藏用的图鉴。按人物整理，记录每张卡有了、想要还是还没有，
+        买了几张、花了多少钱；卡册可以按真实活页的宫格排版；账本帮你算总花费和想要清单还差多少。
+        不需要注册，没有广告。
+      </p>
+    </section>
+
+    <section>
+      <h2>收卡有哪几种方式？</h2>
+      <ul>
+        <li><strong>拍一张</strong>：把小卡放进取景框拍下，自动裁出卡面，可以接着拍卡背。</li>
+        <li><strong>拍整页</strong>：拍一整页卡册，按宫格一次裁出多张。</li>
+        <li><strong>说一句</strong>：按住麦克风说「珉的 Blue Hour 专辑卡收了两张，四十五一张」，自动整理成卡片草稿。</li>
+        <li><strong>扫描识别</strong>：从相册选卖家图、价格截图，读出图里的卡和文字。</li>
+        <li><strong>手动</strong>：自己填信息，正面、卡背可以拍照或从相册选。</li>
+      </ul>
+      <p>所有方式都会先给你核对，确认后才入库，不会自动改掉已有的卡。</p>
+    </section>
+
+    <section>
+      <h2>我的数据存在哪里？会不会丢？</h2>
+      <p>
+        数据存在你的手机上。打开「iCloud 同步」后，还会存进你自己的 iCloud，
+        换手机或删掉 App 重装，登录同一个 Apple ID 就能找回。
+      </p>
+      <p>
+        <span class="warn">建议</span>
+        定期在「账本 → 设置 → 导出」备份一份。导出的是一个压缩包，
+        里面有表格和全部卡面照片，可以存到「文件」或电脑上；
+        需要时用「从备份恢复」导回来，同一张卡以最新修改为准。
+      </p>
+    </section>
+
+    <section>
+      <h2>iCloud 显示「同步失败」或「空间不足」怎么办？</h2>
+      <ul>
+        <li><strong>没有网络</strong>：联网后会自动继续，不用操作。</li>
+        <li><strong>iCloud 空间不足</strong>：到系统「设置 → Apple 账户 → iCloud」清理空间或升级容量，之后会自动补上。</li>
+        <li><strong>没有登录 iCloud</strong>：数据只存在这台手机，登录后打开 Pocca 即可开始同步。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>为什么要这些权限？</h2>
+      <ul>
+        <li><strong>相机</strong>：拍一张、拍整页时使用。</li>
+        <li><strong>麦克风和语音识别</strong>：说一句时使用，识别在手机上完成，录音不保存。</li>
+      </ul>
+      <p>
+        从相册选图用的是系统照片选择器，不需要相册权限。
+        权限都可以拒绝，拒绝后只是对应功能用不了；
+        后悔了可以在系统「设置 → 隐私与安全性」里改回来。
+      </p>
+    </section>
+
+    <section>
+      <h2>「说一句」提示设备不支持？</h2>
+      <p>
+        说一句只用手机本机的中文语音识别，不上传录音。部分机型或系统语言下系统不提供本机识别，
+        可以在「设置 → 说一句」里看到是否支持。不支持时可以改用拍一张或手动添加。
+      </p>
+    </section>
+
+    <section>
+      <h2>怎么清空全部记录？</h2>
+      <p>
+        「账本 → 设置 → 清除所有数据」，需要连点两次确认，清掉之后无法撤销。
+        如果开着 iCloud 同步，云端的数据也会跟着清空；
+        只想删云端，用「删除 iCloud 中的数据」。
+      </p>
+    </section>
+
+    <section>
+      <h2>想要某个功能，或者发现了 bug</h2>
+      <p>
+        发邮件给我就行，上面那个地址；App 里「设置 → 意见反馈」会自动带上版本号。
+        bug 请尽量描述复现步骤，附一张截图会很有帮助。
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    隐私政策见 <a href="privacy.html">privacy.html</a>。
+    Pocca 不收集任何用户信息。
+  </footer>
+</div>
+</body>
+</html>

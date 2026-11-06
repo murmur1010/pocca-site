@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pocca</title>
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap">
+<style>
+  :root {
+    --ground: #F2F3F6;
+    --surface: #FFFFFF;
+    --ink: #14151B;
+    --ink2: #5B606C;
+    --line: rgba(20, 21, 27, 0.11);
+    --cobalt: #2335EE;
+    --sticker: #F2E04A;
+
+    --display: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+            "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #141724;
+      --surface: #1C2032;
+      --ink: #EEF0F7;
+      --ink2: #9CA3B9;
+      --line: rgba(238, 240, 247, 0.14);
+      --cobalt: #8290FF;
+      --sticker: #E9D84A;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 24px 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card { width: 100%; max-width: 26rem; }
+  .mark { display: flex; align-items: center; gap: 12px; }
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+  }
+  .tag { margin: 0.9rem 0 1.8rem; color: var(--ink2); }
+  .links { display: flex; flex-direction: column; gap: 10px; }
+  a.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  a.row:hover { border-color: var(--cobalt); }
+  a.row .go { color: var(--cobalt); font-family: var(--display); }
+  footer { margin-top: 1.8rem; font-size: 0.82rem; color: var(--ink2); }
+  .logo { flex: none; display: block; border-radius: 22.5%; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark">
+      <img class="logo" src="logo.png" width="40" height="40" alt="" aria-hidden="true">
+      <span class="wordmark">Pocca</span>
+    </div>
+
+    <p class="tag">把喜欢的小卡收进自己的图鉴。不收集任何信息，数据只在你的手机和你自己的 iCloud 里。</p>
+
+    <div class="links">
+      <a class="row" href="privacy.html"><span>隐私政策</span><span class="go">→</span></a>
+      <a class="row" href="support.html"><span>技术支持</span><span class="go">→</span></a>
+    </div>
+
+    <footer>有问题来信：2672309116@qq.com</footer>
+  </div>
+</body>
+</html>
